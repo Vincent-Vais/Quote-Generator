@@ -1,0 +1,391 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  color: #2f3542;
+  letter-spacing: 1.2px;
+  word-spacing: 2px;
+  font-weight: 300;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2370a1ff' fill-opacity='0.43' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.quote-container {
+  position: relative;
+  width: auto;
+  max-width: 900px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quote-text {
+  font-size: 3.75rem;
+  position: relative;
+}
+
+.like-quote {
+  /* display: inline-block;
+  top: 50%;
+  left: 50%; 
+  position: absolute;
+  top: 0;
+  left: 0; */
+}
+
+.like-quote i {
+  /* display: inline-block; */
+  position: absolute;
+  /* top: 37.5vh;
+  left: 47.5vw; */
+  top: 35%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+  font-size: 10rem;
+  opacity: 0.025;
+  z-index: 1;
+}
+
+.like-quote .like-quote--icon-1 {
+  z-index: 2;
+}
+
+.like-quote .like-quote--icon-1:hover {
+  opacity: 0.25;
+}
+
+.like-quote .like-quote--icon-1:active {
+  animation: buttonFadeOut 0.5s ease-in forwards;
+}
+
+.like-quote--icon-2 {
+  opacity: 0;
+  color: transparent;
+}
+
+.like-quote .like-quote--icon-1:active + .like-quote--icon-2 {
+  color: #ff7675;
+  opacity: 0.25;
+}
+
+/* .fa-quote-left + div > i:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #747d8c;
+  opacity: 0;
+  z-index: -1; */
+/* background-clip: text;
+  -webkit-background-clip: text; */
+/* } */
+
+/* .fa-quote-left + div > i:hover {
+  opacity: 0.8;
+}
+
+.fa-quote-left + div > i:hover:after {
+  animation: buttonFadeOut 0.5s ease-in;
+}
+
+.fa-quote-left + div > i:active:after {
+  animation: buttonFadeIn 0.5s ease-in;
+} */
+
+.long-quote {
+  font-size: 3.25rem;
+}
+
+.fa-quote-left {
+  font-size: 4.5rem;
+}
+.quote-author {
+  margin-top: 1rem;
+  font-size: 3.25rem;
+  font-weight: 100;
+  font-style: italic;
+  text-align: right;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #2f3542;
+}
+
+.popper .quote-author {
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  color: #fff;
+  background: #2f3542;
+  outline: none;
+  padding: 1.2rem 2.4rem;
+  box-shadow: 0 0.4rem rgba(206, 214, 224, 0.75);
+  font-weight: 400;
+  line-height: 0;
+}
+
+button:last-child {
+  margin-left: auto;
+}
+
+button:hover {
+  background: #34495e;
+}
+
+button:active {
+  transform: translateY(0.4rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.75);
+}
+
+.twitter-button:hover {
+  color: #38a1f3;
+}
+
+/* Liked */
+.liked {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+  background: linear-gradient(to right, #70a1ff, #ff4757);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.liked i {
+  font-size: 8rem;
+  cursor: pointer;
+}
+
+.liked:hover {
+  transform: translateY(-0.5rem);
+}
+
+.liked:active,
+.close:active {
+  transform: translateY(0.25rem);
+}
+
+.popper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+      to bottom right,
+      rgba(112, 161, 255, 0.5),
+      rgba(55, 66, 250, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+      no-repeat top / cover;
+  width: 100vw;
+  height: 100vh;
+  background-blend-mode: screen;
+}
+
+.popper.hide {
+  animation: hide 2s ease-in forwards;
+}
+
+.popper.show {
+  animation: appear 2s ease-in, visible 2s linear forwards;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.quote-popper {
+  color: #dfe4ea;
+  padding: 2rem;
+  width: 100%;
+  border-bottom: 1px solid #ff4757;
+}
+
+.quote-popper .quote-text {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+/* Loader */
+.loader {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  font-size: 10rem;
+  background: linear-gradient(to right, #70a1ff, #ff4757);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: spin 2s linear infinite;
+}
+
+.close {
+  position: absolute;
+  top: 2.5rem;
+  left: 5rem;
+}
+
+.close i {
+  font-size: 5rem;
+  cursor: pointer;
+  color: #ced6e0;
+}
+
+.close:hover i {
+  color: #ff4757;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes notvisible {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    /* clip-path: circle(0% at 50% 50%); */
+  }
+  25% {
+    clip-path: circle(20% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(20% at 12% 84%);
+  }
+  75% {
+    clip-path: circle(20% at 93% 51%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@keyframes hide {
+  0% {
+    clip-path: circle(100% at 50% 50%);
+    /* clip-path: circle(0% at 50% 50%); */
+  }
+  25% {
+    clip-path: circle(20% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(20% at 12% 84%);
+  }
+  75% {
+    clip-path: circle(20% at 93% 51%);
+  }
+  100% {
+    clip-path: circle(0% at 50% 50%);
+  }
+}
+
+@keyframes buttonFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(2) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    transform: scaleX(1.2) scaleY(1.4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 50%;
+  }
+  .quote-container {
+    margin: 1rem 10rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 45%;
+  }
+  .quote-container {
+    margin: 1rem 5rem;
+  }
+}
